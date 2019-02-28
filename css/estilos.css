@@ -1,0 +1,43 @@
+body {
+    background-color: #222;
+    font-family: monospace;
+}
+.titulo {
+    color: white;
+    text-align: center;
+}
+.contenedor-galeria,.contenedor-galeria-extras{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+}
+.galeria__img {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 3%;
+    /*Rellena el espacio que la foto no puede cubrir por si sola*/
+    object-fit: cover;
+    /*Filtro para bajar la intensidad de la luz*/
+    filter: brightness(70%);
+	/*Animacion de encoger y agrandar las imagenes infinitamente*/
+    animation: escalar 1.5s infinite alternate;
+}
+
+/*Escogemos cuanto se va a encoger y agrandar la imagen */
+@keyframes escalar{
+
+	to{
+		transform: scale(1);
+	}
+	from{
+		transform: scale(1.05);
+	}
+}
+
+.galeria__img:hover {
+    filter: brightness(100%);
+}
+
